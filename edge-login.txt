@@ -1,0 +1,104 @@
+[18292:27736:0605/142212.682:ERROR:chrome\browser\task_manager\providers\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.
+[18292:27736:0605/142213.102:ERROR:chrome\browser\task_manager\providers\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.
+[18292:27736:0605/142213.881:ERROR:chrome\browser\task_manager\providers\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.
+[18292:25968:0605/142214.142:ERROR:components\sync\engine\get_updates_processor.cc:424] PostClientToServerMessage() failed during GetUpdates with error Protocol error (TRANSIENT_ERROR)
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGTEA</title>
+  <style type="text/css" data-vite-dev-id="C:/Projeto PET/src/styles/global.css">/* --------------------------------------------------------------------------------
+   DIRETORIO: src/styles/
+   O QUE COLOCAR AQUI: Estilos globais da aplicacao, resets e variaveis de tema.
+   -------------------------------------------------------------------------------- */
+
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937;
+  background: linear-gradient(135deg, #f3f4f6 0%, #dbeafe 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.85rem 1.2rem;
+  background: #0f766e;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+}
+
+.page-container {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.main-nav a,
+.button-link {
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.main-nav a.active {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+}
+
+.page-card {
+  width: min(100%, 680px);
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+}
+
+.page-tag {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+</style></head>
+  <body>
+    <div id="root"><main class="page-container"><nav class="main-nav"><a aria-current="page" class="active" href="/login" data-discover="true">Login</a><a class="" href="/dashboard" data-discover="true">Dashboard</a><a class="" href="/pacientes" data-discover="true">Pacientes</a></nav><section class="page-card"><span class="page-tag">SIGTEA</span><h1>Login</h1><p>Acesse o sistema para acompanhar pacientes e registrar atendimentos.</p><button type="button">Entrar</button></section></main></div>
+    <script type="module" src="/src/main.jsx"></script>
+  
+  
+</body></html>
+[18292:19172:0605/142216.582:ERROR:chrome\browser\edge_windows_user_activity\windows_user_activity_register.cc:692] hr failed: O identificador da janela é inválido. (0x80070578)
