@@ -1,0 +1,9 @@
+/* --------------------------------------------------------------------------------
+   DIRETÓRIO: src/styles/
+   O QUE COLOCAR AQUI: Estilos globais da aplicação, resets e variáveis de tema (CSS).
+   -------------------------------------------------------------------------------- */
+
+/* REGRA DE OURO DO GUIA (Seção 2):
+   Mudanças de visual (CSS) ou formatação que não alteram a lógica do sistema 
+   devem ser commitadas obrigatoriamente utilizando o prefixo "style".
+   Exemplo de commit: style(visual): ajusta cores globais do sistema */
