@@ -1,14 +1,21 @@
-import MainNav from '../components/MainNav';
+import { listarPacientes } from "../services/pacientesService";
 
-export default function Pacientes() {
+function Pacientes() {
+  const pacientes = listarPacientes();
+
   return (
-    <main className="page-container">
-      <MainNav />
-      <section className="page-card">
-        <span className="page-tag">Cadastros</span>
-        <h1>Pacientes</h1>
-        <p>Área inicial para listar, cadastrar e acompanhar pacientes.</p>
-      </section>
-    </main>
+    <div>
+      <h1>Pacientes</h1>
+
+      {pacientes.map((paciente) => (
+        <div key={paciente.id}>
+          <p>Nome: {paciente.nome}</p>
+          <p>CPF: {paciente.cpf}</p>
+          <p>Data Nascimento: {paciente.dataNascimento}</p>
+        </div>
+      ))}
+    </div>
   );
 }
+
+export default Pacientes;
