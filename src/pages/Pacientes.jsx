@@ -17,6 +17,10 @@ function Pacientes() {
           Login
         </button>
 
+        <button onClick={() => navigate("/cadastro")} className="button-link">
+          Cadastro
+        </button>
+
         <button onClick={() => navigate("/dashboard")} className="button-link">
           Dashboard
         </button>
@@ -34,6 +38,10 @@ function Pacientes() {
             <h1>Pacientes</h1>
             <p>Listagem de pacientes cadastrados no sistema.</p>
           </div>
+
+          <button onClick={() => navigate("/novo-paciente")}>
+            Novo Paciente
+          </button>
         </div>
 
         <div className="pacientes-filtros">
@@ -49,26 +57,36 @@ function Pacientes() {
             onChange={(e) => setStatus(e.target.value)}
           >
             <option value="">Todos</option>
-            <option value="Ativo">Ativos</option>
-            <option value="Inativo">Inativos</option>
-            <option value="Aguardando">Lista de espera</option>
+            <option value="Ativo">Ativo</option>
+            <option value="Inativo">Inativo</option>
+            <option value="Aguardando">Aguardando - Lista de Espera</option>
           </select>
         </div>
 
         <div className="pacientes-lista">
           {pacientes.map((paciente) => (
             <div className="paciente-item" key={paciente.id}>
-              <h3>{paciente.name}</h3>
+              <h3>{paciente.nome_completo}</h3>
 
               <p><strong>CPF:</strong> {paciente.cpf}</p>
-              <p><strong>Data de nascimento:</strong> {paciente.birth_date}</p>
-              <p><strong>Responsável:</strong> {paciente.responsible_name}</p>
-              <p><strong>Contato:</strong> {paciente.responsible_contact}</p>
-              <p><strong>Convênio:</strong> {paciente.health_insurance}</p>
-              <p><strong>Nível TEA:</strong> {paciente.autism_level}</p>
-              <p><strong>Status:</strong> {paciente.status}</p>
+              <p><strong>Data de nascimento:</strong> {paciente.data_nascimento}</p>
+              <p><strong>Sexo:</strong> {paciente.sexo}</p>
+              <p><strong>CNS:</strong> {paciente.num_cns}</p>
+              <p><strong>Responsável:</strong> {paciente.nome_responsavel || "Não informado"}</p>
+              <p><strong>Contato:</strong> {paciente.contato}</p>
+              <p><strong>Status clínico:</strong> {paciente.status_clinico}</p>
+              <p><strong>Nível de suporte:</strong> {paciente.nivel_suporte || "Não se aplica"}</p>
+              <p><strong>Comorbidades:</strong> {paciente.comorbidades?.join(", ") || "Nenhuma"}</p>
+              <p><strong>Endereço:</strong> {paciente.logradouro}, {paciente.numero} - {paciente.bairro}</p>
+              <p><strong>Cidade:</strong> {paciente.municipio} - {paciente.estado}</p>
+              <p><strong>CEP:</strong> {paciente.cep}</p>
+              <p><strong>Status:</strong> {paciente.status_cadastro}</p>
             </div>
           ))}
+
+          {pacientes.length === 0 && (
+            <p>Nenhum paciente encontrado.</p>
+          )}
         </div>
       </main>
     </div>

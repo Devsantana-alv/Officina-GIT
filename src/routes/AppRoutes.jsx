@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
 import Login from '../pages/Login';
-import Cadastro from "../pages/Cadastro";
+import Cadastro from "../pages/NovoPaciente";
 import NotFound from '../pages/NotFound';
 import Pacientes from '../pages/Pacientes';
 
