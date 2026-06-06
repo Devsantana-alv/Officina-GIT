@@ -11,7 +11,7 @@ export const pacientesMock = [
     autism_level: "2",
     comorbidities: ["TDAH", "TOD"],
     is_waiting_list: false,
-    status: "active"
+    status: "Ativo"
   },
   {
     id: 2,
@@ -25,6 +25,6 @@ export const pacientesMock = [
     autism_level: "1",
     comorbidities: ["Ansiedade"],
     is_waiting_list: true,
-    status: "waiting"
+    status: "Aguardando"
   }
 ];
