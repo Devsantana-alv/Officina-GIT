@@ -49,9 +49,9 @@ function Pacientes() {
             onChange={(e) => setStatus(e.target.value)}
           >
             <option value="">Todos</option>
-            <option value="active">Ativos</option>
-            <option value="inactive">Inativos</option>
-            <option value="waiting">Lista de espera</option>
+            <option value="Ativo">Ativos</option>
+            <option value="Inativo">Inativos</option>
+            <option value="Aguardando">Lista de espera</option>
           </select>
         </div>
 
