@@ -1,63 +1,66 @@
-import { listarPacientes } from "../services/pacientesService";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { listarPacientes } from "../services/pacientesService";
 
 function Pacientes() {
-  const pacientes = listarPacientes();
   const navigate = useNavigate();
 
+  const [search, setSearch] = useState("");
+  const [status, setStatus] = useState("");
+
+  const pacientes = listarPacientes({ search, status });
+
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div
-        style={{
-          background: "#ffffff",
-          padding: "30px",
-          borderRadius: "15px",
-          width: "700px",
-          boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-        }}
-      >
-        <h1>Pacientes</h1>
-
-        {pacientes.map((paciente) => (
-          <div
-            key={paciente.id}
-            style={{
-              borderBottom: "1px solid #ddd",
-              padding: "10px 0",
-            }}
-          >
-            <p><strong>Nome:</strong> {paciente.nome}</p>
-            <p><strong>CPF:</strong> {paciente.cpf}</p>
-            <p>
-              <strong>Data de Nascimento:</strong>{" "}
-              {paciente.dataNascimento}
-            </p>
+    <main className="page">
+      <section className="panel">
+        <div className="panel-header">
+          <div>
+            <span className="eyebrow">SIGTEA</span>
+            <h1>Pacientes</h1>
+            <p>Listagem de pacientes cadastrados no sistema.</p>
           </div>
-        ))}
 
-        <button
-          onClick={() => navigate("/dashboard")}
-          style={{
-            marginTop: "20px",
-            padding: "10px 20px",
-            backgroundColor: "#0f766e",
-            color: "#fff",
-            border: "none",
-            borderRadius: "8px",
-            cursor: "pointer",
-          }}
-        >
-          Voltar
-        </button>
-      </div>
-    </div>
+          <button onClick={() => navigate("/dashboard")}>
+            Voltar
+          </button>
+        </div>
+
+        <div className="filters">
+          <input
+            type="text"
+            placeholder="Buscar por nome ou CPF"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+
+          <select
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
+          >
+            <option value="">Todos</option>
+            <option value="active">Ativos</option>
+            <option value="inactive">Inativos</option>
+            <option value="waiting">Lista de espera</option>
+          </select>
+        </div>
+
+        <div className="patients-list">
+          {pacientes.map((paciente) => (
+            <article className="patient-card" key={paciente.id}>
+              <h3>{paciente.name}</h3>
+
+              <p><strong>CPF:</strong> {paciente.cpf}</p>
+              <p><strong>Data de nascimento:</strong> {paciente.birth_date}</p>
+              <p><strong>Responsável:</strong> {paciente.responsible_name}</p>
+              <p><strong>Contato:</strong> {paciente.responsible_contact}</p>
+              <p><strong>Convênio:</strong> {paciente.health_insurance}</p>
+              <p><strong>Nível TEA:</strong> {paciente.autism_level}</p>
+              <p><strong>Status:</strong> {paciente.status}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
 

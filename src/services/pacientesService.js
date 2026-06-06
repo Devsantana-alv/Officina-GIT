@@ -1,18 +1,36 @@
-import { pacientesMock } from "../mocks/pacientesMock";
+import {
+  buscarPacientesStorage,
+  salvarPacientesStorage
+} from "../storage/pacientesStorage";
 
-let pacientes = [...pacientesMock];
+export const listarPacientes = ({ search = "", status = "" } = {}) => {
+  const pacientes = buscarPacientesStorage();
 
-export const listarPacientes = () => {
-  return pacientes;
+  return pacientes.filter((paciente) => {
+    const busca = search.toLowerCase();
+
+    const correspondeBusca =
+      paciente.name.toLowerCase().includes(busca) ||
+      paciente.cpf.includes(search);
+
+    const correspondeStatus =
+      status === "" || paciente.status === status;
+
+    return correspondeBusca && correspondeStatus;
+  });
 };
 
-export const cadastrarPaciente = (novoPaciente) => {
-  const paciente = {
-    id: pacientes.length + 1,
-    ...novoPaciente
+export const criarPaciente = (dadosPaciente) => {
+  const pacientes = buscarPacientesStorage();
+
+  const novoPaciente = {
+    id: Date.now(),
+    ...dadosPaciente
   };
 
-  pacientes.push(paciente);
+  pacientes.push(novoPaciente);
 
-  return paciente;
+  salvarPacientesStorage(pacientes);
+
+  return novoPaciente;
 };

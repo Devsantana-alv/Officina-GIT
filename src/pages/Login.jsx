@@ -1,24 +1,18 @@
-import { useNavigate } from 'react-router-dom';
-import MainNav from '../components/MainNav';
+import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+function Login() {
   const navigate = useNavigate();
 
-  function handleLogin() {
-    navigate('/dashboard');
-  }
+  const handleLogin = () => {
+    // aqui você pode validar usuário e senha depois
+    navigate("/dashboard");
+  };
 
   return (
-    <main className="page-container">
-      <MainNav />
-      <section className="page-card">
-        <span className="page-tag">SIGTEA</span>
-        <h1>Login</h1>
-        <p>Acesse o sistema para acompanhar pacientes e registrar atendimentos.</p>
-        <button type="button" onClick={handleLogin}>
-          Entrar
-        </button>
-      </section>
-    </main>
+    <button onClick={handleLogin}>
+      Entrar
+    </button>
   );
 }
+
+export default Login;
