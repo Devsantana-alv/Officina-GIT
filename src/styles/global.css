@@ -160,3 +160,63 @@ button {
 button:hover {
   background: #115e59;
 }
+
+.pacientes-card {
+  max-width: 900px;
+}
+
+.pacientes-header {
+  margin-bottom: 1.5rem;
+}
+
+.pacientes-header h1 {
+  margin: 0.8rem 0 0.5rem;
+  color: #1f2937;
+}
+
+.pacientes-header p {
+  margin: 0;
+  color: #374151;
+}
+
+.pacientes-filtros {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.pacientes-filtros input,
+.pacientes-filtros select {
+  padding: 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font: inherit;
+  background: #ffffff;
+  color: #1f2937;
+}
+
+.pacientes-filtros input {
+  flex: 1;
+}
+
+.pacientes-lista {
+  display: grid;
+  gap: 1rem;
+}
+
+.paciente-item {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.paciente-item h3 {
+  margin: 0 0 0.8rem;
+  color: #111827;
+}
+
+.paciente-item p {
+  margin: 0.35rem 0;
+  color: #374151;
+}

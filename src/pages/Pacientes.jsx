@@ -11,21 +11,32 @@ function Pacientes() {
   const pacientes = listarPacientes({ search, status });
 
   return (
-    <main className="page">
-      <section className="panel">
-        <div className="panel-header">
+    <div className="page-container">
+      <nav className="main-nav">
+        <button onClick={() => navigate("/login")} className="button-link">
+          Login
+        </button>
+
+        <button onClick={() => navigate("/dashboard")} className="button-link">
+          Dashboard
+        </button>
+
+        <button className="active">
+          Pacientes
+        </button>
+      </nav>
+
+      <main className="page-card pacientes-card">
+        <span className="page-tag">PACIENTES</span>
+
+        <div className="pacientes-header">
           <div>
-            <span className="eyebrow">SIGTEA</span>
             <h1>Pacientes</h1>
             <p>Listagem de pacientes cadastrados no sistema.</p>
           </div>
-
-          <button onClick={() => navigate("/dashboard")}>
-            Voltar
-          </button>
         </div>
 
-        <div className="filters">
+        <div className="pacientes-filtros">
           <input
             type="text"
             placeholder="Buscar por nome ou CPF"
@@ -44,9 +55,9 @@ function Pacientes() {
           </select>
         </div>
 
-        <div className="patients-list">
+        <div className="pacientes-lista">
           {pacientes.map((paciente) => (
-            <article className="patient-card" key={paciente.id}>
+            <div className="paciente-item" key={paciente.id}>
               <h3>{paciente.name}</h3>
 
               <p><strong>CPF:</strong> {paciente.cpf}</p>
@@ -56,11 +67,11 @@ function Pacientes() {
               <p><strong>Convênio:</strong> {paciente.health_insurance}</p>
               <p><strong>Nível TEA:</strong> {paciente.autism_level}</p>
               <p><strong>Status:</strong> {paciente.status}</p>
-            </article>
+            </div>
           ))}
         </div>
-      </section>
-    </main>
+      </main>
+    </div>
   );
 }
 
