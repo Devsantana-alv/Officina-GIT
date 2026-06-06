@@ -39,9 +39,6 @@ function Pacientes() {
             <p>Listagem de pacientes cadastrados no sistema.</p>
           </div>
 
-          <button onClick={() => navigate("/novo-paciente")}>
-            Novo Paciente
-          </button>
         </div>
 
         <div className="pacientes-filtros">
