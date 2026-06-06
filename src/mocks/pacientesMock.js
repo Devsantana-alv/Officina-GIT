@@ -2,7 +2,7 @@ export const pacientesMock = [
   {
     id: 1,
     name: "Pedro Alvares",
-    cpf: "98765432100",
+    cpf: "816390012-76",
     birth_date: "2007-05-20",
     responsible_name: "Maria Alvares",
     responsible_contact: "62982357422",
@@ -16,7 +16,7 @@ export const pacientesMock = [
   {
     id: 2,
     name: "João Silva",
-    cpf: "12345678900",
+    cpf: "316235647-78",
     birth_date: "2002-03-14",
     responsible_name: "Ana Silva",
     responsible_contact: "62981925675",
