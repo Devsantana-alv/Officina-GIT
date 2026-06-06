@@ -51,14 +51,19 @@ button {
 }
 
 .main-nav a,
-.button-link {
+.button-link,
+.main-nav button {
   border: 1px solid #cbd5e1;
   border-radius: 999px;
   padding: 0.7rem 1rem;
   background: rgba(255, 255, 255, 0.78);
+  color: #111827;
+  cursor: pointer;
+  font: inherit;
 }
 
-.main-nav a.active {
+.main-nav a.active,
+.main-nav button.active {
   background: #0f172a;
   border-color: #0f172a;
   color: #ffffff;
