@@ -12,14 +12,18 @@ function Login() {
       <nav className="main-nav">
         <button className="active">Login</button>
 
-        <button onClick={() => navigate("/dashboard")} className="button-link">
-          Dashboard
-        </button>
+        <button onClick={() => navigate("/cadastro")} className="button-link">
+        Cadastro
+       </button>
 
-        <button onClick={() => navigate("/pacientes")} className="button-link">
-          Pacientes
-        </button>
-      </nav>
+        <button onClick={() => navigate("/dashboard")} className="button-link">
+        Dashboard
+       </button>
+
+       <button onClick={() => navigate("/pacientes")} className="button-link">
+        Pacientes
+      </button>
+</nav>
 
       <main className="page-card">
         <span className="page-tag">SIGTEA</span>
