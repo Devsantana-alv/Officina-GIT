@@ -40,7 +40,7 @@ export const pacientesMock = [
     logradouro: "Avenida Brasil",
     numero: "45",
     bairro: "Setor Oeste",
-    cep: "75600001",
+    cep: "75600000",
     municipio: "Goiatuba",
     estado: "GO",
     status_cadastro: "Aguardando"
