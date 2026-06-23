@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import MainNav from "../components/MainNav";
 import { listarPacientes } from "../services/pacientesService";
 
 function Pacientes() {
-  const navigate = useNavigate();
-
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("");
 
@@ -12,23 +10,7 @@ function Pacientes() {
 
   return (
     <div className="page-container">
-      <nav className="main-nav">
-        <button onClick={() => navigate("/login")} className="button-link">
-          Login
-        </button>
-
-        <button onClick={() => navigate("/cadastro")} className="button-link">
-          Cadastro
-        </button>
-
-        <button onClick={() => navigate("/dashboard")} className="button-link">
-          Dashboard
-        </button>
-
-        <button className="active">
-          Pacientes
-        </button>
-      </nav>
+      <MainNav />
 
       <main className="page-card pacientes-card">
         <span className="page-tag">PACIENTES</span>
@@ -38,7 +20,6 @@ function Pacientes() {
             <h1>Pacientes</h1>
             <p>Listagem de pacientes cadastrados no sistema.</p>
           </div>
-
         </div>
 
         <div className="pacientes-filtros">

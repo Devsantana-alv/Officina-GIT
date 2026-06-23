@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import MainNav from "../components/MainNav";
 import { criarPaciente } from "../services/pacientesService";
 
 function NovoPaciente() {
@@ -105,23 +106,7 @@ function NovoPaciente() {
 
   return (
     <div className="page-container">
-      <nav className="main-nav">
-        <button onClick={() => navigate("/login")} className="button-link">
-          Login
-        </button>
-
-        <button onClick={() => navigate("/cadastro")} className="button-link">
-          Cadastro
-        </button>
-
-        <button onClick={() => navigate("/dashboard")} className="button-link">
-          Dashboard
-        </button>
-
-        <button onClick={() => navigate("/pacientes")} className="button-link">
-          Pacientes
-        </button>
-      </nav>
+      <MainNav />
 
       <main className="page-card pacientes-card">
         <span className="page-tag">NOVO PACIENTE</span>

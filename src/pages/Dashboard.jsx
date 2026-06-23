@@ -1,27 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import MainNav from "../components/MainNav";
 
 function Dashboard() {
-  const navigate = useNavigate();
-
   return (
     <div className="page-container">
-      <nav className="main-nav">
-        <button onClick={() => navigate("/login")} className="button-link">
-          Login
-        </button>
-
-        <button onClick={() => navigate("/cadastro")} className="button-link">
-          Cadastro
-        </button>
-
-        <button className="active">
-          Dashboard
-        </button>
-
-        <button onClick={() => navigate("/pacientes")} className="button-link">
-          Pacientes
-        </button>
-      </nav>
+      <MainNav />
 
       <main className="page-card">
         <span className="page-tag">PAINEL</span>
